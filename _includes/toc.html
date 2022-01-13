@@ -1,0 +1,61 @@
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+
+function slugify(string) {
+  return string
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
+}
+
+    var toc = $('#TOC');
+
+    // TODO break down by h2 and h3 too?
+    sections = $('article h1');
+    $.each(sections, function(idx, v) {
+        section = $(v);
+        var div_id = $(section).attr('id');
+        var div_text = section.text();
+        console.log(div_text)
+
+        // If we don't have an id, derive one from title
+        if (!div_id) {
+            div_id = slugify(div_text);        
+            section.attr("id", div_id)
+        }
+
+        // This is the part id
+        var parent = $("#" + div_id)
+        var content = '<li id="link_' + div_id + '"><a href="#' + div_id + '" title="' + div_text.split('¶')[0] +'" class="relative flex hover:text-violet-600 transition-colors py-1 border-l-[3px] pl-4 -ml-0.5 border-transparent hover:border-violet-500">' + div_text.split('¶')[0] +'</a></li>';
+        $(toc).append(content);
+
+        // Add section code to subnavigation
+        var children = $('<ul></ul>')
+        var contenders = $("#" + div_id).nextUntil("h1");
+        $.each(contenders, function(idx, contender){
+           if ($(contender).is('h2') || $(contender).is('h3')) {
+               var contender_id = $(contender).attr('id');
+                var contender_text = $(contender).text();
+
+                if (!contender_id) {
+                    contender_id = slugify(contender_text);        
+                    $(contender).attr("id", contender_id)
+                }
+
+               var content = '<li><a href="#' + contender_id + '" title="' + contender_text.split('¶')[0] +'" class="relative flex hover:text-violet-600 transition-colors py-1 border-l-[3px] pl-4 -ml-0.5 border-transparent hover:border-violet-500">' + contender_text.split('¶')[0] +'</a></li>';
+               children.append(content);
+            }
+         })
+         $("#link_" + div_id).append(children);
+        });
+    });
+</script>

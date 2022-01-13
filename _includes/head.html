@@ -1,0 +1,56 @@
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=keywords content="tw-jekyll {{ site.keywords }}">
+<meta name="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-96x196.png" sizes="96x196">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/android-192x192.png"sizes="192x192">
+
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ site.url }}" />
+<meta property="og:site_name" content="{{ site.url }}" />
+
+<meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="description" itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+<meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
+{% if site.logo %}<meta name="twitter:image" content="{{ site.baseurl }}{{ site.logo }}">{% endif %}
+
+<meta name=referrer content=origin>
+<meta name=HandheldFriendly content=True>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=msapplication-TileColor content="#4d7cfe">
+<meta name=theme-color content="#ffffff">
+<meta property="og:locale" content=en_US>
+<meta property="og:type" content=article>
+{% if site.logo %}<meta property="og:image" content="{{ site.baseurl }}{{ site.logo }}">{% endif %}
+
+<style>@font-face{font-family:'Inter';src:url({{ site.baseurl }}/assets/fonts/inter-light.woff2)format('woff2');font-weight:300;font-style:normal;}@font-face{font-family:'Inter';src:url({{ site.baseurl }}/assets/fonts/inter-regular.woff2)format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Inter';src:url({{ site.baseurl }}/assets/fonts/inter-medium.woff2)format('woff2');font-weight:500;font-style:normal;}@font-face{font-family:'Inter';src:url({{ site.baseurl }}/assets/fonts/inter-semibold.woff2)format('woff2');font-weight:600;font-style:normal;}@font-face{font-family:'Inter';src:url({{ site.baseurl }}/assets/fonts/inter-bold.woff2)format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Mackinac';src:url({{ site.baseurl }}/assets/fonts/mackinac-bold.woff2)format('woff2');font-weight:700;font-style:normal;}@font-face{font-family:'Native';src:url({{ site.baseurl }}/assets/fonts/native-regular.woff2)format('woff2');font-weight:400;font-style:normal;}@font-face{font-family:'Native';src:url({{ site.baseurl }}/assets/fonts/native-bold.woff2)format('woff2');font-weight:700;font-style:normal;}</style>
+      <script>var fontsInServiceWorker=sessionStorage.foutFontsStage1Loaded&&sessionStorage.foutFontsStage2Loaded||"serviceWorker"in navigator&&null!==navigator.serviceWorker.controller&&"activated"===navigator.serviceWorker.controller.state;if(!fontsInServiceWorker&&"fonts"in document){function fetchFonts(o){return Promise.all(o.map(function(o){return document.fonts.load(o)}))}sessionStorage.foutFontsStage2Loaded?document.documentElement.className+=" wf-loaded-stage2":sessionStorage.foutFontsStage1Loaded=!0}if("fonts"in document){let o=new FontFace("Inter","url({{ site.baseurl }}/assets/fonts/inter-light.woff2) format('woff2')",{weight:"300"}),e=new FontFace("Inter","url({{ site.baseurl }}/assets/fonts/inter-regular.woff2) format('woff2')",{weight:"400"}),t=new FontFace("Inter","url({{ site.baseurl }}/assets/fonts/inter-medium.woff2) format('woff2')",{weight:"500"}),n=new FontFace("Inter","url({{ site.baseurl }}/assets/fonts/inter-semibold.woff2) format('woff2')",{weight:"600"}),a=new FontFace("Inter","url({{ site.baseurl }}/assets/fonts/inter-bold.woff2) format('woff2')",{weight:"700"}),r=new FontFace("Mackinac","url({{ site.baseurl }}/assets/fonts/mackinac-bold.woff2) format('woff2')",{weight:"700"}),f=new FontFace("Native","url({{ site.baseurl }}/assets/fonts/native-regular.woff2) format('woff2')",{weight:"400"}),i=new FontFace("Native","url({{ site.baseurl }}/assets/fonts/native-bold.woff2) format('woff2')",{weight:"700"});Promise.all([o.load(),e.load(),t.load(),n.load(),a.load(),r.load(),f.load(),i.load()]).then(o=>{o.forEach(o=>document.fonts.add(o)),document.documentElement.classList.add("wf-loaded-stage2"),sessionStorage.foutFontsStage2Loaded=!0}).catch(o=>{throw new Error(`Error caught: ${o}`)})}(sessionStorage.foutFontsStage1Loaded&&sessionStorage.foutFontsStage2Loaded||"serviceWorker"in navigator&&null!==navigator.serviceWorker.controller&&"activated"===navigator.serviceWorker.controller.state)&&document.documentElement.classList.add("wf-loaded-stage2");</script>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/inter-light.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/inter-regular.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/inter-medium.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/inter-semibold.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/inter-bold.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/mackinac-bold.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/native-regular.woff2" as=font type="font/woff2" crossorigin>
+<link rel=preload href="{{ site.baseurl }}/assets/fonts/native-bold.woff2" as=font type="font/woff2" crossorigin>
+<link rel=stylesheet href="{{ site.baseurl }}/assets/css/tailwind.css" media=all>
+<link rel=stylesheet href="{{ site.baseurl }}/assets/css/main.css" media=all>
+<link rel=stylesheet href="{{ site.baseurl }}/assets/css/docsearch.css" media=all>
+<script src="{{ site.baseurl }}/assets/js/events.js"></script> 
+</head>

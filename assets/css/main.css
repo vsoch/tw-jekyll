@@ -1,0 +1,9 @@
+[class*=language-] {
+  border-radius: 10px !important;
+}
+
+.docs article .callout {
+    margin-left: 0rem !important;
+    margin-right: -2rem;
+}
+ 

@@ -1,0 +1,59 @@
+<!doctype html> 
+<html lang=en-US class=h-full>
+  {% include head.html %}
+
+   <body class="docs relative w-full h-full antialiased text-gray-600">
+      <header class="fixed left-0 top-0 w-full h-20 bg-white border-b border-black border-opacity-10 bg-clip-padding z-50" role=banner>
+         <div class="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 h-full grid grid-cols-auto-span-auto items-center justify-between text-navy">
+          {% include logo-menu.html %}
+            <div class="docsearch-wrapper relative hidden sm:block md:w-full max-w-3xl xl:max-w-[40rem] 2xl:max-w-3xl mx-auto">
+               <svg class="text-gray-400 absolute pointer-events-none w-4 h-4 left-4 top-1/2 transform -translate-y-1/2 z-10" viewBox="0 0 20 20" fill=currentColor aria-hidden=true>
+                  <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+               </svg>
+
+               <div id="docsearch">
+                     <span class="DocSearch-Button-Container td-search-input">
+                      <input type="search" class="DocSearch DocSearch-Button td-search-input" 
+                             aria-label="Search" name="q" id="search-input" placeholder="Search this site…"  style="margin-top:20px" autofocus>
+                      <i style="color:white; margin-right:8px; margin-left:5px" class="fa fa-search"></i>
+                     </div>
+            </div>
+            <button data-menu-toggle aria-expanded=false class="menu-toggle block ml-auto md:hidden relative z-50">
+               <span class=sr-only>Open main menu</span> 
+               <svg aria-hidden=true role=img class="" viewBox="0 0 24 24" style="pointer-events: none; width: 20px; height: 20px;" fill=currentColor>
+                  <g buffered-rendering=static>
+                     <path d="M21.815 4.519a1.5 1.5 0 00-1.5-1.5H3.685a1.5 1.5 0 000 3h16.63a1.5 1.5 0 001.5-1.5zM21.815 19.481a1.5 1.5 0 00-1.5-1.5H3.685a1.5 1.5 0 000 3h16.63a1.5 1.5 0 001.5-1.5zM21.815 12a1.5 1.5 0 00-1.5-1.5H8.564a1.5 1.5 0 000 3h11.751a1.5 1.5 0 001.5-1.5z"/>
+                  </g>
+               </svg>
+            </button>
+            {% include social-menu.html %}
+         </div>
+      </header>
+      <main role=main data-menu-container class="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:flex relative">
+         <div class="hidden md:block w-60 h-full flex-shrink-0"></div>
+         {% include sidebar.html %}
+         </div> 
+         <div class="min-w-0 w-full max-w-3xl xl:max-w-[40rem] 2xl:max-w-3xl">
+            <article class="text-gray-500 leading-relaxed">                              
+               {% if page.title %}<h1 class="w-full font-heading text-navy leading-tight text-[2rem] mb-6"> {{ page.title}} </h1>{% endif %}
+               {% include page-header.html %}
+               {{ content }}
+            </article> 
+         <div class="hidden xl:block w-60 h-full flex-shrink-0"></div>
+         <div class="hidden xl:block fixed top-0 pt-36 pb-16 pl-0.5 w-60 h-full md:text-[13px] text-navy leading-5 docs-right-sidebar">
+            <a href="#" class="flex items-center text-sm font-semibold hover:text-violet-600 transition-colors pb-1 -ml-0.5 mb-1"> Edit </a> 
+            <nav class="flex flex-col relative" style="padding-bottom:15px">
+               {% include editable.html %}
+            </nav>
+            <a href="#" class="flex items-center text-sm font-semibold hover:text-violet-600 transition-colors pb-1 -ml-0.5 mb-1"> On this page </a> 
+            <nav class="flex flex-col relative" id=toc>
+               <div class="scroll-indicator absolute left-0 -ml-px top-0 w-[3px] h-full bg-gray-300 transform scale-y-0 origin-top"></div>
+               <ul class="outline-list" id="TOC">
+                <!-- TOC will be appened here-->
+               </ul>
+            </nav>
+         </div>
+      </main>
+      <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+   </body>
+</html>

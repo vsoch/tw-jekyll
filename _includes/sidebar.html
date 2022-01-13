@@ -1,0 +1,18 @@
+<nav aria-label="Main menu" data-menu class="z-40 bg-white text-base hidden md:block fixed top-0 pt-36 pb-16 pl-0.5 w-[calc(100%-1rem)] md:w-60 h-full max-h-screen md:text-[13px] text-navy docs-left-sidebar overflow-y-auto leading-5">
+   <dl class=leading-5>
+    {% for section in site.data.toc %}
+
+        {% capture sectionUrl %} 
+          {{ section.url | replace: "/", "" }} 
+        {% endcapture %}
+        {% capture pageUrl %} 
+          {{ page.url | replace: "/", "" }} 
+        {% endcapture %}
+      <dt {% if forloop.first %}class="flex sm:justify-center"{% endif %}> <a href="{% if section.url %}{{ site.baseurl }}/{{ section.url }}{% else %}{{ section.external_url }}{% endif %}" class="flex items-center text-sm font-semibold hover:text-violet-600 transition-colors pb-1 -ml-0.5 mb-1 active"> {{ section.title }} </a></dt>
+
+        {% if section.links %}
+      <dd {% if forloop.last %}class="border-l"{% else %}class="mb-8 border-l"{% endif %} id="{{ section.title | slugify }}">{% for entry in section.links %}
+          <a href="{% if entry.url %}{{ site.baseurl }}/{{ entry.url }}{% else %}{{ entry.external_url }}{% endif %}" class="flex hover:text-violet-600 transition-colors py-1 border-l-[3px] pl-4 -ml-0.5 border-transparent hover:border-violet-500">{{ entry.title }}</a>{% endfor %}
+        </dd>{% endif %}{% endfor %}
+   </dl>
+</nav>
