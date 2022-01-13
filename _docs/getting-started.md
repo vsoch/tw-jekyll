@@ -161,11 +161,33 @@ according to the year.
 
 ### Buttons
 
-Buttons aren't fully developed yet, but are coming soon!
+The following buttons are available - you can match the class on the button to the examples below.
+All buttons include the basic `.btn` class.
+
+<button class="btn btn-red">.btn-red</button>
+<button class="btn btn-orange">.btn-orange</button>
+<button class="btn btn-yellow">.btn-yellow</button>
+<button class="btn btn-green">.btn-green</button>
+<button class="btn btn-blue">.btn-blue</button>
+<button class="btn btn-purple">.btn-purple</button>
+<button class="btn btn-pink">.btn-pink</button>
+
+
+```html
+<button class="btn btn-red">.btn .btn-red</button>
+<button class="btn btn-orange">.btn .btn-orange</button>
+<button class="btn btn-yellow">.btn .btn-yellow</button>
+<button class="btn btn-green">.btn .btn-green</button>
+<button class="btn btn-blue">.btn .btn-blue</button>
+<button class="btn btn-purple">.btn .btn-purple</button>
+<button class="btn btn-pink">.btn .btn-pink</button>
+```
 
 ### Badges
 
-For news post items, it's nice to be able to tag it with something that indicates
+For tags that appear on posts, you can edit `badge_color` in the `_config.yaml`
+to change the color. If not set, it defaults to the lovely purple of the main site.
+For news post items, it's also nice to be able to tag it with something that indicates
 a status, such as "warning" or "alert." For this reason, you can add badges to
 the front end matter of any post page, and they will render colored by a type,
 with the tag of your choice. For example, here is an example header for
@@ -177,36 +199,52 @@ title:  "Two Thousand Nineteen"
 date:   2019-06-28 18:52:21
 categories: jekyll update
 badges:
- - type: warning
-   tag: warning-badge
- - type: danger
-   tag: danger-badge
+ - color: orange
+   name: warning-badge
+ - color: red
+   name: danger-badge
 ---
 ```
 
-And here is the post preview with the rendered badges that it produces:
+And to easily include a badge, just use the include:
 
-<span style="font-size:12px" class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-violet-100 bg-violet-600 rounded-full"><a style="cursor:pointer; color:white">jekyll</a></span>
+```
+{% raw %}{% include badge.html text="good-job" style="background-color:green" %}{% endraw %}
+```
+
+To generate this:
+
+{% include badge.html text="good-job" style="background-color:green" %}
+
 
 ### Callout
 
 A callout is a little box to draw emphasis to something:
 
-{% include callout.html text="Hey you, look right here at this interesting thing!" %}
+
+{% include callout.html text="Hey you, look right here!" %}
+
 
 That looks like this:
 
 ```
-{% raw %}{% include callout.html text="Hey you, look right here at this interesting thing!" %}{% endraw %}
+{% raw %}{% include callout.html text="Hey you, look right here!" %}{% endraw %}
 ```
 
-### Alerts
+Or change the background color:
 
-These are under development and will be added soon!
+```
+{% raw %}{% include callout.html text="Hey you! The sky is blue!" color="skyblue" %}{% endraw %}
+```
+
+{% include callout.html text="Hey you, look right here!" color="skyblue" %}
 
 ### Quotes
 
-These will also be added soon.
+Here is what a blockquote looks like. We could probably improve upon this with different colors, etc.
+
+> A famous person once said, "Hark! I do believe I'd like some cheese"
+> -- Famous Person
 
 ## Development
 
@@ -324,14 +362,15 @@ https://<circleci>/0/tw-jekyll/docs/getting-started/index.html
 
 #### config.yml
 
-To edit configuration values, customize the [_config.yml](_config.yml).
-Most are documented there, and please [open an issue](https://www.github.com/{{ site.github_user }}/{{ site.github_user }}/issues) if you have questions.
+To edit configuration values, customize the [_config.yml](_config.yml). There are a lot
+of small details that are included there that are not mentioned here!
+Please [open an issue](https://www.github.com/{{ site.github_user }}/{{ site.github_user }}/issues) if you have questions.
 
 #### Adding pages
 
-To add pages, write them into the [pages](pages) folder. 
+To add pages, write them into the [pages](https://github.com/vsoch/tw-jekyll/tree/main/pages) folder. 
 You define urls based on the `permalink` attribute in your pages,
-and then add them to the navigation by adding to the content of [_data/toc.yml](_data/toc.yml).
+and then add them to the navigation by adding to the content of [_data/toc.yml](https://github.com/vsoch/tw-jekyll/blob/main/_data/toc.yml).
 
 #### Tags
 
