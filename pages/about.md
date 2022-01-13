@@ -3,8 +3,6 @@ title: About
 permalink: /about/
 ---
 
-# About
-
 This is a [starter template](https://vsoch.github.com/tw-jekyll/) for a Tailwind jekyll theme, based
 on [these docs](https://github.com/superfly/docs) that are based on [Tailwind css](https://tailwindcss.com/docs/installation),
 however everything has been modified to work on GitHub pages (using Jekyll). If you don't need

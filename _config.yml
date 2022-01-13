@@ -31,6 +31,10 @@ url: "https://vsoch.github.io" # the base hostname & protocol for your site
 # Keywords (space separated)
 keywords: "documentation theme"
 
+# Add colorful permalinks to headers
+# change colors in _includes/permalinks.html
+add_permalinks: true
+
 # Optional
 twitter: vsoch
 linkedin: vsochat
@@ -40,13 +44,14 @@ github_user: vsoch
 github_repo: tw-jekyll
 # discord: https://community.discord.com
 
+# If you have a logo, put here to include in meta tags
+logo: assets/img/tw-jekyll.png
+
 # branch to edit on GitHub
 github_branch: main
 
-logo: "assets/img/logo/SRCC-square-red.png"
-logo_pixels: 34
-color: "#30638e"
-badge_color: violet
+# If not set, badge color (background) defaults to violet
+# badge_color: "#2bcf98"
 badge_rounded: true
 
 # Build settings

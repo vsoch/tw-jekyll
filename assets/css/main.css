@@ -6,4 +6,98 @@
     margin-left: 0rem !important;
     margin-right: -2rem;
 }
+
+
+.btn-blue {
+  background-color: #405cf5;
+}
+
+.btn-red {
+  background-color: #e31616;
+}
+
+.btn-green {
+  background-color: #2ea44f;
+}
+
+.btn-yellow {
+  background-color: #ffca35;
+}
+
+.btn-orange {
+  background-color: darkorange;
+}
+
+.btn-purple {
+  background-color: #8b5cf6;
+}
+
+
+.btn-pink {
+  background-color: #EA4C89;
+}
+
+.btn {
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #F7F7F7;
+  color: #333;
+}
  
+ 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+blockquote{
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 0.2em 25px;
+  border-left:8px solid #CCC ;
+  line-height:1.6;
+  position: relative;
+}
+
+blockquote::before{
+  font-family:Arial;
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+blockquote::after{
+  content: '';
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}

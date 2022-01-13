@@ -1,12 +1,23 @@
 # Tailwind (tw) Jekyll
 
-**under development**
+![assets/img/tw-jekyll.png](assets/img/tw-jekyll.png)
+
+⭐️ [Documentation Demo](https://vsoch.github.io/tw-jekyll/) ⭐️
 
 This is a [starter template](https://vsoch.github.com/tw-jekyll/) for a Tailwind jekyll theme, based
 on [these docs](https://github.com/superfly/docs) that are based on [Tailwind css](https://tailwindcss.com/docs/installation),
 however everything has been modified to work on GitHub pages (using Jekyll). If you don't need
 native deployment on GitHub pages, then please consider checking out Tailwind. 
-The original [Apache License](LICENSE) is included.
+The original [Apache License](LICENSE) is included. I (@vsoch) have extended it to include:
+
+- includes for callouts and badges
+- rainbow buttons
+- colored tags (with a tags page) for posts and articles
+- GitHub interaction buttons to edit, open an issue, or ask a question
+- customization of colors and minimal style
+- CircleCI preview
+
+And let me know if you'd like to add anything else, or just open a PR and contribute! 🔥️
 
 ## Usage
 
